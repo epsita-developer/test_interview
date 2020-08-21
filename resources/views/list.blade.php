@@ -13,7 +13,7 @@
         @endif
         <table border="1px" width="100%">
             <tr>
-                <td>Title</td>                
+                <td>Product Name</td>                
                 <td>Category</td>                
                 <td>Action</td>
             </tr>
@@ -21,7 +21,9 @@
             @foreach($product_list as $prod_list)
             <tr><td>{{$prod_list->name}}</td>               
                 <td>{{$prod_list->category}}</td>               
-                <td><a href="{{ route('edit',$prod_list->id) }}" title="edit">Edit</a> |                    
+                <td>
+                    <a href="{{ route('show',$prod_list->id) }}">Show</a>
+                    <a href="{{ route('edit',$prod_list->id) }}" title="edit">Edit</a> |                    
                     <form action="{{url('delete', [$prod_list->id])}}" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

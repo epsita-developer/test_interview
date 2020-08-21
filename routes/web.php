@@ -19,6 +19,7 @@ Route::any('list','ProductController@list')->name('list');
 Route::get('add','ProductController@add')->name('add');
 Route::post('add','ProductController@save')->name('add');
 Route::get('edit/{id}', 'ProductController@edit')->name('edit');
+Route::get('show/{id}', 'ProductController@show')->name('show');
 Route::patch('update/{id}', 'ProductController@update')->name('update');
 Route::delete('delete/{id}', 'ProductController@destroy')->name('delete');
 
